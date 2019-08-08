@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .content {
+            background-image: url(/img/background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .user-input {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            width: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            padding-left: 10px;
+            border: none;
+            border-radius: 10px;
+            opacity: .85;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid content">
+        <form method="POST" action="/messaged" id="messagebox">
+            <input class="user-input" type="text" name="message" placeholder="Send me a message...">
+        </form>
+    </div>
+</body>
+<script>
+    $('.user-input').keypress( function(e){
+        if(e.which == 13){
+            $('#messagebox').submit();
+        }
+    })
+</script>
+
+</html>
