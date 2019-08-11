@@ -26,6 +26,105 @@
             font-weight: 600;
             font-size: 14px;
         }
+
+        .color-container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            justify-content: center;
+            transform: translateX(-50%);
+        }
+
+        .hexagon {
+            width: 50px;
+            height: 25px;
+            background: #f07d7d;
+            position: relative;
+            margin: 30px;
+            display: inline-block;
+        }
+
+        .hexagon:before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 12px solid #f07d7d;
+        }
+
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 12px solid #f07d7d;
+        }
+
+        .blue {
+            background: #7dc0f0;
+        }
+
+        .blue:before {
+            border-bottom: 12px solid #7dc0f0;
+        }
+
+        .blue:after {
+            border-top: 12px solid #7dc0f0;
+        }
+
+        .yellow {
+            background: #f0dd7d;
+        }
+
+        .yellow:before {
+            border-bottom: 12px solid #f0dd7d;
+        }
+
+        .yellow:after {
+            border-top: 12px solid #f0dd7d;
+        }
+        .green {
+            background: #7df090;
+        }
+
+        .green:before {
+            border-bottom: 12px solid #7df090;
+        }
+
+        .green:after {
+            border-top: 12px solid  #7df090;
+        }
+        .purple {
+            background: #c67df0;
+        }
+
+        .purple:before {
+            border-bottom: 12px solid #c67df0;
+        }
+
+        .purple:after {
+            border-top: 12px solid  #c67df0;
+        }
+        .pink {
+            background: #f07da1;
+        }
+
+        .pink:before {
+            border-bottom: 12px solid #f07da1;
+        }
+
+        .pink:after {
+            border-top: 12px solid  #f07da1;
+        }
+        
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -37,12 +136,31 @@
             <input class="user-input" type="text" name="message" placeholder="Send me a message...">
         </form>
     </div>
+    <div class="color-container">
+        <div class="hexagon">
+        </div>
+        <div class="hexagon blue">
+        </div>
+        <div class="hexagon yellow">
+        </div>
+        <div class="hexagon green">
+        </div>
+        <div class="hexagon purple">
+        </div>
+        <div class="hexagon pink">
+        </div>
+    </div>
 </body>
 <script>
-    $('.user-input').keypress( function(e){
-        if(e.which == 13){
+    $('.user-input').keypress(function (e) {
+        if (e.which == 13) {
             $('#messagebox').submit();
         }
+    })
+    $('.hexagon').on('click', function () {
+        var color = ($(this).css('background-color'));
+        $('.user-input[type=text]').css('color', color);
+        console.log(color);
     })
 </script>
 
