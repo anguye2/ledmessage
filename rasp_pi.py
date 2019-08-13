@@ -26,7 +26,7 @@ def get_data():
 class RunText(SampleBase):
     def __init__(self, *args, **kwargs):
         super(RunText, self).__init__(*args, **kwargs)
-        self.parser.add_argument("-t", "--text", help="The text to scroll on the RGB LED panel", default="MINH OIIIII!")
+        self.parser.add_argument("-t", "--text", help="The text to scroll on the RGB LED panel", default="Hello World")
 
     def run(self):
         get_data() 
@@ -36,8 +36,6 @@ class RunText(SampleBase):
         textColor = graphics.Color(3,102,252)
         pos = offscreen_canvas.width
         my_text = self.args.text
-        #test_text = ["Hi Minh", "Hi Viet"];
-        #test_text = "Hi Viet";
 
         runner = True
 
