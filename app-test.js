@@ -4,7 +4,7 @@ var app = express();
 var port = 3000;
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://minh:minh12345@localhost:27017/admin";
+var url = "mongodb://35.247.88.248:27017";
 var sinceStart = 0;
 //this function runs every 5 seconds to check if a message is older than 12 hours
 //if message is older than 12 hours then it gets deleted from the database
