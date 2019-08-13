@@ -40,7 +40,7 @@
             height: 25px;
             background: #f07d7d;
             position: relative;
-            margin: 30px;
+            margin: 5px;
             display: inline-block;
         }
 
@@ -134,6 +134,7 @@
     <div class="container-fluid content">
         <form method="POST" action="/messaged" id="messagebox">
             <input class="user-input" type="text" name="message" placeholder="Send me a message...">
+            <input class="user-color" type="hidden" name="color" value="">
         </form>
     </div>
     <div class="color-container">
@@ -160,7 +161,7 @@
     $('.hexagon').on('click', function () {
         var color = ($(this).css('background-color'));
         $('.user-input[type=text]').css('color', color);
-        console.log(color);
+        $('.user-color').val(color);
     })
 </script>
 </html>
